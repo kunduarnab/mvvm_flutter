@@ -21,6 +21,7 @@ class _ApiTutPageState extends State<ApiTutPage> {
       await Future.delayed(const Duration(seconds: 3));
       var data = jsonDecode(response.body.toString());
       if (response.statusCode == 200) {
+        itemList.clear();
         for (Map i in data) {
           itemList.add(Post.fromJson(i));
         }
@@ -36,6 +37,8 @@ class _ApiTutPageState extends State<ApiTutPage> {
     super.initState();
     getPost();
   }
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -62,6 +65,12 @@ class _ApiTutPageState extends State<ApiTutPage> {
             );
           }
         },
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          getPost();
+        },
+        child: const Icon(Icons.refresh),
       ),
     );
   }
