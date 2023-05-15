@@ -1,4 +1,11 @@
 class Album {
+
+  int? albumId;
+  int? id;
+  String? title;
+  String? url;
+  String? thumbnailUrl;
+
   Album({
       this.albumId, 
       this.id, 
@@ -13,11 +20,6 @@ class Album {
     url = json['url'];
     thumbnailUrl = json['thumbnailUrl'];
   }
-  int albumId;
-  int id;
-  String title;
-  String url;
-  String thumbnailUrl;
 
   Map<String, dynamic> toJson() {
     final map = <String, dynamic>{};
