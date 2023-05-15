@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mvvm/mvvm_tut/route/routes_name.dart';
 
 class LoginView extends StatelessWidget {
   LoginView({Key? key}) : super(key: key);
@@ -54,7 +55,9 @@ class LoginView extends StatelessWidget {
               width: double.infinity,
               height: 50,
               child: OutlinedButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushNamed(context, RoutesName.home);
+                },
                 child: const Text("LOGIN"),
               ),
             )
