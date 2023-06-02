@@ -24,9 +24,10 @@ class LoginView extends StatelessWidget {
               controller: _emailController,
               keyboardType: TextInputType.emailAddress,
               decoration: const InputDecoration(
-                  hintText: "Email address",
-                  labelText: "Email address",
-                  prefixIcon: Icon(Icons.alternate_email)),
+                hintText: "Email address",
+                labelText: "Email address",
+                prefixIcon: Icon(Icons.alternate_email),
+              ),
             ),
             ValueListenableBuilder<bool>(
               valueListenable: _isPasswordVisible,
